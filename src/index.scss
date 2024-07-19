@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Mulish:wght@200;300;400;500;600;700&family=Nunito:wght@200;300;400;500;600;700&display=swap');
+
+body {
+    height: 100%;
+    font-family: Mulish, "Arial", sans-serif; // исправленный синтаксис для указания шрифтов
+}
+
+.navigation {
+    @apply py-10 px-20 bg-slate-300 bg-opacity-50 grid grid-cols-5 gap-4
+}

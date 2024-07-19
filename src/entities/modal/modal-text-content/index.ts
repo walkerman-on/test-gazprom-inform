@@ -1,0 +1,1 @@
+export { ModalTextContent } from "./ModalTextContent"
