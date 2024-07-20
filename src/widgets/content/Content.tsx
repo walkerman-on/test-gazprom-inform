@@ -1,6 +1,3 @@
-import { useCounter } from 'app/providers/counter-provider';
-import React, { useCallback, useState } from 'react';
-
 export const Content = () => {
 
     return (

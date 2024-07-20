@@ -8,7 +8,7 @@ export const ModalNestingContent = () => {
     return (
         <>
             <h1 className='text-2xl font-extrabold'>Модальное окно №5</h1>
-            <h2>Количество открытых вложенностей: {1}</h2>
+            <h2 className='pt-4 pb-3 text-xl'>Количество открытых вложенностей: <span className='font-bold'>{1}</span></h2>
             <Button onClick={() => openModal('counter')}>Открыть окно 4</Button>
             {modals.map(modal => (
                 <Modal

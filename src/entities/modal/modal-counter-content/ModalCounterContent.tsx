@@ -8,7 +8,9 @@ export const ModalCounterContent = () => {
     return (
         <>
             <h1 className='text-2xl font-extrabold'>Модальное окно №4</h1>
-            <h2>Количество нажатий на кнопки: {count}</h2>
+            <h2 className='text-xl pt-4'>Количество нажатий на кнопки:
+                <span className='font-bold'> {count}</span>
+            </h2>
         </ >
     );
 };
