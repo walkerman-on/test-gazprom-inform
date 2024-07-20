@@ -1,10 +1,10 @@
-import React, { FC, ButtonHTMLAttributes } from 'react';
+import React, { FC, ButtonHTMLAttributes, memo } from 'react';
 
 interface IButton extends ButtonHTMLAttributes<HTMLButtonElement> {
     error?: boolean
 }
 
-export const Button: FC<IButton> = ({ children, error, ...props }) => {
+export const Button: FC<IButton> = memo(({ children, error, ...props }) => {
     return (
         <button
             {...props}
@@ -13,4 +13,4 @@ export const Button: FC<IButton> = ({ children, error, ...props }) => {
             {children}
         </button>
     );
-};
+})

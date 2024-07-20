@@ -1,38 +1,26 @@
-import { useCounter } from 'app/providers/counter-provider';
-import React, { useState } from 'react';
+import { useModals } from 'features/modal';
+import { Modal } from 'features/modal';
 import { Button } from 'shared/ui/button';
-import { Modal } from 'shared/ui/modal';
 
 export const Navigation = () => {
-    const [modals, setModals] = useState([
-        { state: false, contentType: "text" },
-        { state: false, contentType: "img" },
-        { state: false, contentType: "btn" },
-        { state: false, contentType: "counter" },
-    ]);
-    const { increment } = useCounter()
-
-    const btnOnClick = (index: number) => {
-        // Create a copy of modals state
-        const newModals = [...modals];
-        // Toggle the state of the modal at the specified index
-        newModals[index].state = !newModals[index].state;
-        // Update the modals state with the modified copy
-        increment()
-        setModals(newModals);
-    };
+    const { modals, openModal, closeModal } = useModals();
 
     return (
-        <nav className='navigation'>
-            {
-                modals?.map((item, index) => (
-                    <Modal key={index} active={item.state} setActive={() => btnOnClick(index)} contentType={item.contentType} />
-                ))
-            }
-            <Button onClick={() => btnOnClick(0)}>Show Text Modal</Button>
-            <Button onClick={() => btnOnClick(1)}>Show Image Modal</Button>
-            <Button onClick={() => btnOnClick(2)}>Show Button Modal</Button>
-            <Button onClick={() => btnOnClick(3)}>Show Counter Modal</Button>
+        <nav className='py-10 px-20 bg-slate-300 bg-opacity-50 grid grid-cols-5 gap-6'>
+            {modals.map(modal => (
+                <Modal
+                    key={modal.contentType}
+                    show={modal.state}
+                    onCloseButtonClick={() => closeModal(modal.contentType)}
+                    contentType={modal.contentType}
+                />
+            ))}
+            <Button onClick={() => openModal('img')}>Открыть окно 1</Button>
+            <Button onClick={() => openModal('text')}>Открыть окно 2</Button>
+            <Button onClick={() => openModal('btn')}>Открыть окно 3</Button>
+            <Button onClick={() => openModal('counter')}>Открыть окно 4</Button>
+            <Button onClick={() => openModal('nesting')}>Открыть окно 5</Button>
         </nav>
     );
 };
+
