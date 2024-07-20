@@ -1,6 +1,6 @@
 import { useModals } from 'features/modal';
 import { Button } from 'shared/ui/button';
-import { Modal } from 'features/modal/ui';
+import { Modal } from 'features/modal';
 
 export const ModalNestingContent = () => {
     const { modals, openModal, closeModal } = useModals();

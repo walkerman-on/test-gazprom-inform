@@ -1,4 +1,4 @@
-import "./index.scss";
+import "app/styles/index.scss";
 import { Navigation } from 'widgets/navigation';
 import { Content } from 'widgets/content/Content';
 import { Footer } from 'widgets/footer';
