@@ -1,7 +1,6 @@
 import ReactDOM from 'react-dom/client';
-import App from './App';
-import { CounterProvider } from 'app/providers/counter-provider';
 import { BrowserRouter } from 'react-router-dom';
+import App from './app/App';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -9,9 +8,7 @@ const root = ReactDOM.createRoot(
 
 root.render(
   <BrowserRouter>
-    <CounterProvider>
-      <App />
-    </CounterProvider>
+    <App />
   </BrowserRouter>
 );
 

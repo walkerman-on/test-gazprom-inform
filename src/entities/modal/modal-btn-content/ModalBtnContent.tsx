@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 import { Button } from 'shared/ui/button';
 
 interface IModalBtnContent {
@@ -24,4 +24,4 @@ export const ModalBtnContent: FC<IModalBtnContent> = ({ onCloseButtonClick }) =>
             </div>
         </section>
     );
-};
+}

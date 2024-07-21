@@ -9,7 +9,7 @@ export const Footer = () => {
                 </Link>
             </h2>
             <Link to={"https://t.me/walkerman_on"}>
-                <h2 className='text-gray-500'>made by
+                <h2 className='text-gray-500 text-center'>made by
                     <span className='text-blue-500 hover:opacity-80 cursor-pointer'> @walkerman_on</span>
                 </h2>
             </Link>

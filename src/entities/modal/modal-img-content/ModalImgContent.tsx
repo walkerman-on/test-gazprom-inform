@@ -1,5 +1,3 @@
-import React from 'react';
-
 export const ModalImgContent = () => {
     return (
         <>
@@ -9,4 +7,4 @@ export const ModalImgContent = () => {
             </div>
         </>
     );
-};
+}

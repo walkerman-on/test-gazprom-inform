@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import { ModalType } from '../types/types';
-import { useCounter } from 'app/providers/counter-provider';
 import { IModalReturn, IModalState } from './types';
+import { useCounter } from 'app/providers/state-provider';
 
 export const useModals = (): IModalReturn => {
-    const { increment } = useCounter()
+    const { incrementBtnCount, decrementDepthCount } = useCounter()
 
     const [modals, setModals] = useState<IModalState[]>([
         { state: false, contentType: 'img' },
@@ -18,13 +18,14 @@ export const useModals = (): IModalReturn => {
         setModals(modals.map(modal =>
             modal.contentType === id ? { ...modal, state: true } : modal
         ));
-        increment()
+        incrementBtnCount()
     };
 
     const closeModal = (id: ModalType) => {
         setModals(modals.map(modal =>
             modal.contentType === id ? { ...modal, state: false } : modal
         ));
+        decrementDepthCount()
     };
 
     return { modals, openModal, closeModal };

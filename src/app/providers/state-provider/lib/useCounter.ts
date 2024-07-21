@@ -1,8 +1,9 @@
 import { useContext } from "react";
-import { CounterContext } from "./CounterContext";
+import { StateContext } from "./StateContext";
 
 export const useCounter = () => {
-    const context = useContext(CounterContext);
+    const context = useContext(StateContext);
+
     if (context === null) {
         throw new Error('useCounter must be used within a CounterContextProvider');
     }
